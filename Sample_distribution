@@ -1,0 +1,9 @@
+df=pd.read_csv('/content/gdrive/My Drive/project_database/dataset3.csv')
+df.head(10)
+df['type'].value_counts().plot(kind='bar')
+plt.title('Distribution of CRC Samples')
+plt.xlabel('Sample_class',fontsize=14)
+plt.ylabel('Numbers',fontsize=14)
+
+plt.tick_params(axis='both',labelsize=14)
+plt.show()
