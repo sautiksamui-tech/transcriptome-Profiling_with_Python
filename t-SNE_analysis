@@ -1,0 +1,15 @@
+from sklearn.preprocessing import StandardScaler
+ 
+standardized_data = StandardScaler().fit_transform(d)
+print(standardized_data.shape)
+model = TSNE(n_components = 2, random_state = 0)
+tsne_data = model.fit_transform(df.drop(['ss','Unnamed: 0'],axis=1))
+tsne_data = np.vstack((tsne_data.T, l)).T
+tsne_df = pd.DataFrame(data = tsne_data,
+     columns =("Dim_1", "Dim_2", "label"))
+ 
+# Ploting the result of tsne
+sns.FacetGrid(tsne_df, hue ="label", size = 6).map(
+       plt.scatter, 'Dim_1', 'Dim_2').add_legend()
+ 
+plt.show()
