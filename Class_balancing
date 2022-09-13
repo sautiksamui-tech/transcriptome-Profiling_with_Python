@@ -1,0 +1,10 @@
+SMOTE = SMOTE()
+X_SMOTE, y_SMOTE = SMOTE.fit_resample(df.drop(['Unnamed: 0','ss','type'],axis=1), df['type'])
+y_SMOTE.value_counts().plot(kind='bar')
+plt.title('Distribution of CRC Samples after oversampling to achieve class balance')
+plt.xlabel('Sample_class',fontsize=14)
+plt.ylabel('Numbers',fontsize=14)
+
+plt.tick_params(axis='both',labelsize=14)
+plt.show()
+print("After oversampling: ",Counter(y_SMOTE))
