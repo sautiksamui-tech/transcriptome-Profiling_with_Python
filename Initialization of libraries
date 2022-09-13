@@ -10,3 +10,6 @@ from matplotlib import offsetbox
 from sklearn import (manifold, datasets, decomposition, ensemble,discriminant_analysis, random_projection)
 from sklearn.manifold import TSNE
 from sklearn.preprocessing import StandardScaler
+from imblearn.over_sampling import SMOTE
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
